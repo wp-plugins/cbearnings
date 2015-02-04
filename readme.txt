@@ -12,4 +12,4 @@ other ClickBank plugins require you to manually enter ClickBank products one by 
 
 Note : Please ensure that simple xml is installed
 
-want to go for pro version see here http://magento.ifyouknowit.com
+
