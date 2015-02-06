@@ -267,14 +267,14 @@ register_activation_hook( __FILE__, 'cbearnings_install' );
 $myplugin=cbearnings::GetInstance();
 $myplugin->InitPlugin();
 
-function cbearnings_short(){
+function cbearnings_short($atts){
 
 $options = get_option('plugin_options_cb');
 $cb_id = $options['cb_id'];
 
 global $wpdb;
 
-$pagenum = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
+$pagenum = isset($_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
 $limit = 10;
 $offset = ( $pagenum - 1 ) * $limit;
 
@@ -282,10 +282,10 @@ $total = $wpdb->get_var("SELECT COUNT(slid) FROM {$wpdb->prefix}cbtable");
 $num_of_pages = ceil($total/$limit );	
 
 $atts = shortcode_atts(array(
-		'cbsearch' => ''
+		'cbtext' => ''
 	),$atts,'CB_EARNINGS');
 
-$cbsearch=$atts['cbsearch'];
+$cbsearch=$atts['cbtext'];
 
 ob_start();
 
@@ -293,8 +293,8 @@ ob_start();
 $search=$cbsearch;
 
 
-if($search){
-$sql1="select * from ".$wpdb->prefix."cbtable where title like '%".$search."%' limit $offset,$limit";
+if($search!=''){
+$sql1="select * from ".$wpdb->prefix."cbtable where (title like '%".$search."%' or description like '%".$search."%') limit $offset,$limit";
 } else {
 $sql1="select * from ".$wpdb->prefix."cbtable limit $offset,$limit";
 }
