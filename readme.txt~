@@ -17,7 +17,7 @@ other ClickBank plugins require you to manually enter ClickBank products one by 
 4. Just Place [CB_EARNING] in any post/page
 5. See the site, products list must appear.
 6. [CB_EARNINGS    cbtext="music"]
-6. [CB_EARNINGS    cbtext="<?php print $_POST['cbtext'];?>"] (you have to install a plugin to allow php tag )
+7. [CB_EARNINGS cbtext="[php] if(isset($_POST['cbtext'])){ echo $_POST['cbtext'];} [/php]"] (no need to install any plugin to allow php)
 
 Note : Please ensure that simple xml is installed
 
