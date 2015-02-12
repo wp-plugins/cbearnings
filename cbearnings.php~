@@ -3,10 +3,11 @@ ini_set('dispay_errors',1);
 /**
 Plugin Name: CBEARNINGS
 Plugin URI: http://www.ifyouknowit.com/
-Description: This plugin will provide clickbank database. To help click bank affilates in their effort to promote clickbank products.   
+Description: This plugin will provide clickbank database. To help click bank affilates in their effort to promote clickbank products.It has short code, search widget, and set clickbank id from admin panel. want professional version check <a href="http://magento.ifyouknowit.com">Go pro</a>   
 Author: ifyouknowit.com
 Version: 1.0
 Author URI: http://www.ifyouknowit.com/
+Donate link: http://www.ifyouknowit.com/
 */
 
 class cbearnings{
@@ -490,15 +491,7 @@ function shortcode_tags($content){
 					$content = str_replace("&#039;","'",$content);
 					$content = str_replace("&amp;#038;","&",$content);
 					$content = str_replace("&amp;lt;br /&amp;gt;"," ", $content);
-					$content = htmlspecialchars_decode($content);
-					$content = str_replace("<br />"," ",$content);
-					$content = str_replace("<p>"," ",$content);
-					$content = str_replace("</p>"," ",$content);
-					$content = str_replace("[br/]","<br/>",$content);
-					$content = str_replace("\\[","&#91;",$content);
-					$content = str_replace("\\]","&#93;",$content);
-					//$content = str_replace("[","<",$content);
-					//$content = str_replace("]",">",$content);
+					$content = htmlspecialchars_decode($content);					
 					$content = str_replace("&#91;",'[',$content);
 					$content = str_replace("&#93;",']',$content);
 					$content = str_replace("&gt;",'>',$content);

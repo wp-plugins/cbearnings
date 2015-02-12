@@ -1,6 +1,13 @@
 <?php
 /**
-Plugin name: CBEARNING WIDGET 
+Plugin Name: CBEARNINGS WIDGET
+Plugin URI: http://www.ifyouknowit.com/
+Description: This plugin,widget will provide clickbank database. To help click bank affilates in their effort to promote clickbank products.It has short code, search widget, and set clickbank id from admin panel.want professional version check <a href="http://magento.ifyouknowit.com">Go pro</a>   
+Author: ifyouknowit.com
+Version: 1.0
+Author URI: http://www.ifyouknowit.com/
+Donate link: http://www.ifyouknowit.com/
+
 */
 class cbe_widget extends WP_Widget {
         

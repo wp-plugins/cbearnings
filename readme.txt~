@@ -7,6 +7,7 @@ Tags: cbearning,clickbank affiliate
 
 CBEARNING allows you to import the ENTIRE ClickBank Marketplace into your WordPress blog in seconds while 
 other ClickBank plugins require you to manually enter ClickBank products one by one.
+want professional version check <a href="http://magento.ifyouknowit.com">Go pro</a>
 
 
 == Installation ==

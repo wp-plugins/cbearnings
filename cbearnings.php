@@ -3,10 +3,11 @@ ini_set('dispay_errors',1);
 /**
 Plugin Name: CBEARNINGS
 Plugin URI: http://www.ifyouknowit.com/
-Description: This plugin will provide clickbank database. To help click bank affilates in their effort to promote clickbank products.   
+Description: This plugin will provide clickbank database. To help click bank affilates in their effort to promote clickbank products.It has short code, search widget, and set clickbank id from admin panel. want professional version check <a href="http://magento.ifyouknowit.com">Go pro</a>   
 Author: ifyouknowit.com
 Version: 1.0
 Author URI: http://www.ifyouknowit.com/
+Donate link: http://www.ifyouknowit.com/
 */
 
 class cbearnings{
